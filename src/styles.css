@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+html, body {
+  height: 100%;
+  background-color: #313131;
+  /* overflow-x: hidden; */
+  overflow: hidden;
+  margin: 0;
+}
+
+body {
+  font-family: Roboto,
+    "Helvetica Neue", sans-serif;
+}
+
+.custom-dialog>mat-dialog-container {
+  background-color: rgba(255, 255, 255, 0.0001);
+}
+
+.mat-tab-label {
+  font-family: Impact, Charcoal, sans-serif;
+  font-size: 2vw;
+  letter-spacing: 0px;
+  word-spacing: 2px;
+  font-weight: normal;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: small-caps;
+  text-transform: none;
+  align-items: center;
+  text-align: center;
+  background-color: white;
+  width: 100%
+}
+
+/* .mat-tab-labels .mat-tab-label-active{
+  background-color: slateblue;
+ } */

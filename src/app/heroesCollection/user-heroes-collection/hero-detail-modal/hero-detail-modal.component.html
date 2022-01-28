@@ -1,0 +1,110 @@
+<mat-dialog-content>
+     <div class="row">
+          <div class="col-md-8">
+               <img src={{heroImgMap}}>
+          </div>
+          <div class="col-md-4">
+               <div class="row">
+                    <!-- hero title -->
+                    <h1 class="emphasis-text {{rarityClass}}">{{heroTitle}}</h1>
+               </div>
+
+
+               <div class="row">
+                    <!-- hero description -->
+                    <mat-card class="card-skills">
+                         <div class="row emphasis-text2">
+                              Hero ID: {{heroes[currentIndex].id}}
+                         </div>
+                    </mat-card>
+               </div>
+
+               <div class="row">
+                    <!-- hero description -->
+                    <mat-card class="card-skills">
+                         <div class="row emphasis-text2">
+                              Equipped with the armor of the gods, this legendary warrior is able to change the course
+                              of wars and win riches for his lord.
+                         </div>
+                    </mat-card>
+               </div>
+
+               <div class="row">
+                    <!-- hero attibuts -->
+                    <mat-card class="card-skills">
+                         <div class="row">
+                              <div class="col-md-3">
+                                   <img src="./assets/img/health-point-icon-bgoff.png">
+                              </div>
+                              <div class="col-md-9 emphasis-text2">
+                                   Health Points: {{heroes[currentIndex].attrHealthPoints}}
+                              </div>
+                         </div>
+                         <div class="row">
+                              <div class="col-md-3">
+                                   <img src="./assets/img/crossed-swords-icon-bgoff.png">
+                              </div>
+                              <div class="col-md-9 emphasis-text2">
+                                   Mele Attack: {{heroes[currentIndex].attrMeleAttack}}
+                              </div>
+                         </div>
+                         <div class="row">
+                              <div class="col-md-3">
+                                   <img src="./assets/img/shield-icon-bgoff.png">
+                              </div>
+                              <div class="col-md-9 emphasis-text2">
+                                   Defense: {{heroes[currentIndex].attrDefense}}
+                              </div>
+                         </div>
+                         <div class="row">
+                              <div class="col-md-3">
+                                   <img src="./assets/img/crossbow-icon-bgoff.png">
+                              </div>
+                              <div class="col-md-9 emphasis-text2">
+                                   Distance Attack: {{heroes[currentIndex].attrDistanceAttack}}
+                              </div>
+                         </div>
+                         <div class="row">
+                              <div class="col-md-3">
+                                   <img src="./assets/img/magic-staff-icon-bgoff.png">
+                              </div>
+                              <div class="col-md-9 emphasis-text2">
+                                   Magic Power: {{heroes[currentIndex].attrMagicPower}}
+                              </div>
+                         </div>
+                         <div class="row">
+                              <div class="col-md-3">
+                                   <img src="./assets/img/attack-speed-icon.png">
+                              </div>
+                              <div class="col-md-9 emphasis-text2">
+                                   Attack Speed: {{heroes[currentIndex].attrAttackSpeed}}
+                              </div>
+                         </div>
+                    </mat-card>
+               </div>
+
+          </div>
+     </div>
+     <div class="row" style="margin-top: 10px;" *ngIf="heroes.length>1">
+          <div class="col-md-9" >
+               <mat-form-field>
+                    <mat-label>Order by</mat-label>
+                    <mat-select [(value)]="selectedOrder" (selectionChange)="selectedOrderChange($event.value)">
+                         <mat-option value="pwrDesc">Power Descending</mat-option>
+                         <mat-option value="pwrAsc">Power Ascending</mat-option>
+                         <mat-option value="idDesc">Id Descending</mat-option>
+                         <mat-option value="idAsc">Id Ascending</mat-option>
+                    </mat-select>
+               </mat-form-field>
+          </div>
+          <div class="col-md-1" style="margin-top: 10px;">
+               <mat-icon (click)="changeHero('previous')">arrow_back_ios</mat-icon>
+          </div>
+          <div class="col-md-1" style="margin-top: 10px;">
+               {{currentIndex+1}} of {{heroes.length}}
+          </div>
+          <div class="col-md-1" style="margin-top: 10px;">
+               <mat-icon (click)="changeHero('next')">arrow_forward_ios</mat-icon>
+          </div>
+     </div>
+</mat-dialog-content>

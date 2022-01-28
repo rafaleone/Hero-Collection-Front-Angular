@@ -1,0 +1,117 @@
+<ngx-spinner type="square-jelly-box"></ngx-spinner>
+<div class="row conteiner">
+    <div class="col-md-12">
+
+        <mat-card class="card-over">
+
+            <div class="row justify-content-center" style="margin-bottom: 20px;">
+                <div class="col-md-10">
+                    <mat-tab-group [selectedIndex]="-1">
+                        <mat-tab label="Achievement" [disabled]="true">
+                            <mat-card>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <mat-card>
+                                            <mat-card style="margin-bottom: 3px;">
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <img src="./assets/img/all-knights-badge.png">
+                                                    </div>
+                                                    <div class="col-md-10">
+                                                        Master Knight: You have knights of all rarities (Bonus Health Points +5%) 
+                                                    </div>
+                                                </div>
+                                            </mat-card>
+                                            <mat-card>
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <img src="./assets/img/100-heroes-bagde.png">
+                                                    </div>
+                                                    <div class="col-md-10">
+                                                        Veteran Hero: You have more than 100 Heroes (Bonus Attack Speed +1%) 
+                                                    </div>
+                                                </div>
+                                            </mat-card>
+                                        </mat-card>
+                                    </div>
+                                    <div class="col-md-4"><mat-card style="height: 100%;"></mat-card></div>
+                                    <div class="col-md-4"><mat-card style="height: 100%;"></mat-card></div>
+                                </div>
+                            </mat-card>
+                        </mat-tab>
+                        <mat-tab label="Your Collection Statistc" [disabled]="true">
+                        </mat-tab>
+                        <mat-tab label="Battle Time" [disabled]="true">
+                        </mat-tab>
+                    </mat-tab-group>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-1"
+                    style="display:flex; flex-direction: row; justify-content: center; align-items: center">
+                    <mat-icon class="icon-display" (click)="previousStep()">arrow_back_ios</mat-icon>
+                </div>
+                <div class="col-md-10">
+
+                    <mat-tab-group [selectedIndex]="tabSelectedIndex">
+                        <div class="row hero-type-main-row" *ngFor="let hero of heroTypes">
+                            <mat-tab label="{{hero.displayName}}">
+
+                                <div class="col-md-12">
+                                    <mat-card>
+                                        <mat-card-content>
+                                            <div class="row">
+
+                                                <div *ngFor="let heroRarity of hero.rarity" class="col-md-3">
+                                                    <mat-card>
+                                                        <mat-card-header class="hero-card-header">
+                                                            <div class="row hero-card-header-row">
+                                                                <div class="col-md-8">
+                                                                    <mat-card-title
+                                                                        [ngClass]="'emphasis-text rarity-'+heroRarity.name">
+                                                                        {{heroRarity.displayName}}
+                                                                    </mat-card-title>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <span matBadge="{{heroRarity.count || ''}}"
+                                                                        matBadgeOverlap="false"></span>
+                                                                </div>
+                                                            </div>
+                                                        </mat-card-header>
+                                                        <img [src]="heroesCardImgMap[hero.id][heroRarity.id]">
+                                                        <mat-card-content class="hero-card-content">
+                                                            <mat-icon style="color: blueviolet;">star</mat-icon>
+                                                            <mat-icon
+                                                                [ngClass]="heroRarity.id > 1 ? 'filled-star-color-icon' : 'empty-star-color-icon'">
+                                                                star</mat-icon>
+                                                            <mat-icon
+                                                                [ngClass]="heroRarity.id > 2 ? 'filled-star-color-icon' : 'empty-star-color-icon'">
+                                                                star</mat-icon>
+                                                            <mat-icon
+                                                                [ngClass]="heroRarity.id > 3 ? 'filled-star-color-icon' : 'empty-star-color-icon'">
+                                                                star</mat-icon>
+                                                        </mat-card-content>
+                                                        <mat-card-actions class="hero-card-actions">
+                                                            <button mat-button class="hero-action-button"
+                                                                (click)="openHeroDetails(hero.id,heroRarity.id)">Details</button>
+                                                        </mat-card-actions>
+                                                    </mat-card>
+                                                </div>
+                                            </div>
+                                        </mat-card-content>
+                                    </mat-card>
+                                </div>
+
+                            </mat-tab>
+                        </div>
+                    </mat-tab-group>
+                </div>
+                <div class="col-md-1"
+                    style="display:flex; flex-direction: row; justify-content: center; align-items: center">
+                    <mat-icon class="icon-display" (click)="nextStep()">arrow_forward_ios</mat-icon>
+                </div>
+            </div>
+
+        </mat-card>
+    </div>

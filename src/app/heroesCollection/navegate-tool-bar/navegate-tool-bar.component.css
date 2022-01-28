@@ -1,0 +1,60 @@
+.nav-top-tool-bar {
+    align-items: center;
+    background-color: #252526 !important;
+}
+
+.nav-side-tool-bar {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.0);
+}
+
+.hide-side-tool-bar {
+    display: none;
+}
+
+.titleFont {
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 40px;
+    letter-spacing: 0px;
+    word-spacing: 2px;
+    color: #ffffff;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: small-caps;
+    text-transform: none;
+    align-items: center;
+    margin-right: 10%;
+}
+
+.nav-bar-buttons {
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 18px;
+}
+
+mat-icon {
+    margin-right: 8px;
+}
+
+a {
+    all: unset;
+    cursor: pointer;
+}
+
+.store-icon{
+    color:brown;
+}
+
+.collection-icon{
+    color: cornflowerblue;
+}
+
+.battle-icon{
+    color: red;
+}
+
+.rules-icon{
+    color: teal;
+}
