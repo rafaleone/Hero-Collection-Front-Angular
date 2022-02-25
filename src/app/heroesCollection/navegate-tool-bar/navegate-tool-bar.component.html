@@ -1,23 +1,6 @@
-<!--<div class="row">
-     <mat-toolbar class="nav-card-bar">
-        <div class="col-md-5">
-            <h1 class="titleFont">Heroes Collection</h1>
-        </div>
-        <div fxShow="true" fxHide.lt-md="true" class="col-md-5">
-            <button mat-button class="nav-bar-buttons"><mat-icon>store</mat-icon>STORE</button>
-            <button mat-button class="nav-bar-buttons"><mat-icon>collections_bookmark</mat-icon>COLLECTION</button>
-            <button mat-button class="nav-bar-buttons"><mat-icon>whatshot</mat-icon>BATTLE</button>
-            <button mat-button class="nav-bar-buttons"><mat-icon>sms_failed</mat-icon>RULES</button>
-        </div>
-        <div class="col-md-2">
-            <button mat-raised-button color="primary"><mat-icon>account_balance_wallet</mat-icon>Connect your wallet!</button>
-        </div>
-    </mat-toolbar> -->
-
-
 <div>
     <mat-toolbar class="nav-top-tool-bar">
-        <div fxShow="true" fxHide.gt-sm="true">
+        <div fxShow="true" fxHide.gt-md="true">
             <!-- <a href="" (click)="sidenav.toggle();showSideNavBar()"> -->
                 <mat-icon style="color: #FFFFFF;" (click)="sidenav.toggle();showSideNavBar()">menu</mat-icon>
             <!-- </a> -->
@@ -26,17 +9,22 @@
 
         <span class="example-spacer"></span>
 
-        <div fxShow="true" fxHide.lt-md="true">
+        <div fxShow="true" fxHide.lt-lg="true" style="width: 100%;">
             <!-- The following menu items will be hidden on both SM and XS screen sizes -->
             <div class="row">
-                <div class="col-md-10">
-                    <button mat-button class="nav-bar-buttons" (click)="btnStore()"><mat-icon class="store-icon">store</mat-icon>STORE</button>
-                    <button mat-button class="nav-bar-buttons" (click)="btnCollection()"><mat-icon class="collection-icon">collections_bookmark</mat-icon>COLLECTION</button>
-                    <button mat-button class="nav-bar-buttons"><mat-icon class="battle-icon">whatshot</mat-icon>BATTLE</button>
-                    <button mat-button class="nav-bar-buttons"><mat-icon class="rules-icon">sms_failed</mat-icon>RULES</button>
-                </div>
-                <div class="col-md-2">
-                    <button mat-raised-button color="primary" (click)="btnConnectWallet()"><mat-icon>account_balance_wallet</mat-icon>Connect your wallet!</button>
+                <div class="col-md-12">
+                    <div style="display: flex;justify-content: space-between;"> 
+                        <div>
+                            <button mat-button class="nav-bar-buttons" (click)="btnStore()"><mat-icon class="store-icon">store</mat-icon>STORE</button>
+                            <button mat-button class="nav-bar-buttons" (click)="btnCollection()"><mat-icon class="collection-icon">collections_bookmark</mat-icon>COLLECTION</button>
+                            <button mat-button class="nav-bar-buttons" (click)="btnCollection2()"><mat-icon class="collection-icon">collections_bookmark</mat-icon>COLLECTION 2</button>
+                            <button mat-button class="nav-bar-buttons"><mat-icon class="battle-icon">whatshot</mat-icon>BATTLE</button>
+                            <button mat-button class="nav-bar-buttons"><mat-icon class="rules-icon">sms_failed</mat-icon>RULES</button>
+                        </div>
+                        <div>
+                            <button mat-raised-button color="primary" (click)="btnConnectWallet()"><mat-icon>account_balance_wallet</mat-icon>{{walletButtonText}}</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -47,14 +35,12 @@
     <mat-sidenav-container fxFlexFill class="nav-side-tool-bar" (click)="showSideNavBar()">
         <mat-sidenav #sidenav fxLayout="column">
             <div fxLayout="column" fxLayoutAlign="space-evenly start">
-                <a (click)="sidenav.toggle()" href="#" mat-button>
-                    <mat-icon>chevron_left</mat-icon>
-                </a>
-                <button mat-button (click)="showSideNavBar();btnStore()"><mat-icon>store</mat-icon>STORE</button>
-                <button mat-button (click)="showSideNavBar();btnCollection();"><mat-icon>collections_bookmark</mat-icon>COLLECTION</button>
-                <button mat-button (click)="showSideNavBar()"><mat-icon>whatshot</mat-icon>BATTLE</button>
-                <button mat-button (click)="showSideNavBar()"><mat-icon>sms_failed</mat-icon>RULES</button>
-                <button mat-raised-button color="primary" (click)="showSideNavBar();btnConnectWallet()"><mat-icon>account_balance_wallet</mat-icon>Connect your wallet!</button>
+                <button mat-button (click)="btnStore()"><mat-icon>store</mat-icon>STORE</button>
+                <button mat-button (click)="btnCollection();"><mat-icon>collections_bookmark</mat-icon>COLLECTION</button>
+                <button mat-button (click)="btnCollection2();"><mat-icon>collections_bookmark</mat-icon>COLLECTION 2</button>
+                <button mat-button ><mat-icon>whatshot</mat-icon>BATTLE</button>
+                <button mat-button ><mat-icon>sms_failed</mat-icon>RULES</button>
+                <button mat-raised-button color="primary" (click)="btnConnectWallet()"><mat-icon>account_balance_wallet</mat-icon>{{walletButtonText}}</button>
             </div>
         </mat-sidenav>
     </mat-sidenav-container>

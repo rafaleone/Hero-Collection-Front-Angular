@@ -1,394 +1,122 @@
 <ngx-spinner type="square-jelly-box"></ngx-spinner>
-<div class="row conteiner">
+<div class="flash-white-screen" *ngIf="blink"></div>
+
+<div class="row">
     <div class="col-md-12">
         <mat-card class="card-over">
 
-            <div class="row" style="margin-bottom: 10px;">
-                <mat-tab-group>
-                    <mat-tab label="Last 24H">
-                        <div class="col-md-12">
+            <div class="row justify-content-center" style="margin-bottom: 20px;display: none;">
+                <div class="col-xxl-10 col-xl-12">
+                    <mat-tab-group [selectedIndex]="-1">
+                        <mat-tab label="Your Balance" [disabled]="true">
                             <mat-card>
-                                <mat-card-title class="emphasis-text">Summoned Hereos</mat-card-title>
-                                <mat-card-content>
-                                    <div class="row">
-
-                                        <div class="col-md-3">
-                                            <mat-card>
-                                                <mat-card-header class="hero-card-header">
-                                                    <div class="row hero-card-header-row">
-                                                        <div class="col-md-8">
-                                                            <mat-card-title class="emphasis-text rarity-normal">
-                                                                Normal
-                                                            </mat-card-title>
-                                                        </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-12">
+                                        <mat-card>
+                                            <mat-card style="margin-bottom: 3px;background-color: #C3C3C3">
+                                                <div class="row"
+                                                    style="display: flex; justify-content: center; align-items: center;">
+                                                    <div class="col-lg-2 col-6">
+                                                        <img src="./assets/img/coin_icon.png">
                                                     </div>
-                                                </mat-card-header>
-                                                <p class="div-center-itens emphasis-text" style="padding: 10px;">850</p>
-                                                <mat-card-content class="hero-card-content">
-                                                    <mat-icon style="color: blueviolet;">star</mat-icon>
-                                                    <mat-icon style="color: gray">star</mat-icon>
-                                                    <mat-icon style="color: gray;">star</mat-icon>
-                                                    <mat-icon style="color: gray;">star</mat-icon>
-                                                </mat-card-content>
-                                            </mat-card>
-                                        </div>
-
-                                        <div class="col-md-3">
-                                            <mat-card>
-                                                <mat-card-header class="hero-card-header">
-                                                    <div class="row hero-card-header-row">
-                                                        <div class="col-md-8">
-                                                            <mat-card-title class="emphasis-text rarity-rare">
-                                                                Rare
-                                                            </mat-card-title>
-                                                        </div>
+                                                    <div class="col-lg-8"
+                                                        style="display: flex; justify-content: center; align-items: center;">
+                                                        <mat-card style="background-color: #4C4B63">
+                                                            <p class="user-balance">180 Coins</p>
+                                                        </mat-card>
                                                     </div>
-                                                </mat-card-header>
-                                                <p class="div-center-itens emphasis-text" style="padding: 10px;">531</p>
-                                                <mat-card-content class="hero-card-content">
-                                                    <mat-icon style="color: blueviolet;">star</mat-icon>
-                                                    <mat-icon style="color: blueviolet">star</mat-icon>
-                                                    <mat-icon style="color: gray;">star</mat-icon>
-                                                    <mat-icon style="color: gray;">star</mat-icon>
-                                                </mat-card-content>
-                                            </mat-card>
-                                        </div>
-
-                                        <div class="col-md-3">
-                                            <!--repetir para todas raridades-->
-                                            <mat-card>
-                                                <mat-card-header class="hero-card-header">
-                                                    <div class="row hero-card-header-row">
-                                                        <div class="col-md-8">
-                                                            <mat-card-title class="emphasis-text rarity-epic">
-                                                                Epic
-                                                            </mat-card-title>
-                                                        </div>
+                                                    <div class="col-lg-2 col-6">
+                                                        <img src="./assets/img/coin_icon.png">
                                                     </div>
-                                                </mat-card-header>
-                                                <p class="div-center-itens emphasis-text" style="padding: 10px;">410</p>
-                                                <mat-card-content class="hero-card-content">
-                                                    <mat-icon style="color: blueviolet;">star</mat-icon>
-                                                    <mat-icon style="color: blueviolet">star</mat-icon>
-                                                    <mat-icon style="color: blueviolet;">star</mat-icon>
-                                                    <mat-icon style="color: gray;">star</mat-icon>
-                                                </mat-card-content>
+                                                </div>
                                             </mat-card>
-                                        </div>
-
-                                        <div class="col-md-3">
-                                            <!--repetir para todas raridades-->
-                                            <mat-card>
-                                                <mat-card-header class="hero-card-header">
-                                                    <div class="row hero-card-header-row">
-                                                        <div class="col-md-8">
-                                                            <mat-card-title class="emphasis-text rarity-legendary">
-                                                                Legendary
-                                                            </mat-card-title>
-                                                        </div>
+                                            <mat-card style="background-color: #C3C3C3">
+                                                <div class="row"
+                                                    style="display: flex; justify-content: center; align-items: center;">
+                                                    <div class="col-lg-2 col-6">
+                                                        <img src="./assets/img/summon_scroll.png">
                                                     </div>
-                                                </mat-card-header>
-                                                <p class="div-center-itens emphasis-text" style="padding: 10px;">50</p>
-                                                <mat-card-content class="hero-card-content">
-                                                    <mat-icon style="color: blueviolet;">star</mat-icon>
-                                                    <mat-icon style="color: blueviolet">star</mat-icon>
-                                                    <mat-icon style="color: blueviolet;">star</mat-icon>
-                                                    <mat-icon style="color: blueviolet;">star</mat-icon>
-                                                </mat-card-content>
+                                                    <div class="col-lg-8"
+                                                        style="display: flex; justify-content: center; align-items: center;">
+                                                        <mat-card style="background-color: #4C4B63">
+                                                            <p class="user-balance">{{userScrolls}} Scrolls</p>
+                                                        </mat-card>
+                                                    </div>
+                                                    <div class="col-lg-2 col-6">
+                                                        <img src="./assets/img/summon_scroll.png">
+                                                    </div>
+                                                </div>
                                             </mat-card>
-                                        </div>
+                                        </mat-card>
                                     </div>
-                                </mat-card-content>
+                                    <div class="col-lg-6 col-12">
+                                        <mat-card>
+                                            <mat-card style="margin-bottom: 3px;background-color:  #C3C3C3">
+                                                <div class="row"
+                                                    style="display: flex; justify-content: center; align-items: center;">
+                                                    <div class="col-lg-2 col-6">
+                                                        <img src="./assets/img/single_coin_icon.png">
+                                                    </div>
+                                                    <div class="col-lg-5">
+                                                        <input #coinsInput type="number" class="form-control"
+                                                            placeholder="Coins Amount" />
+                                                    </div>
+                                                    <div class="col-lg-5"
+                                                        style="display: flex; justify-content: center; align-items: center;">
+                                                        <button mat-button color="buy-button" (click)="btnBuyCoins()">
+                                                            <mat-icon>paid</mat-icon> Buy Coins <mat-icon>paid
+                                                            </mat-icon>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </mat-card>
+                                            <mat-card style="background-color:  #C3C3C3">
+                                                <div class="row"
+                                                    style="display: flex; justify-content: center; align-items: center;">
+                                                    <div class="col-lg-2 col-6">
+                                                        <img src="./assets/img/closed_scroll.png">
+                                                    </div>
+                                                    <div class="col-lg-5">
+                                                        <input #scrollsInput type="number" class="form-control"
+                                                            placeholder="Scrolls Amount" />
+                                                        <span class="text-secondary">25x coins per scroll</span>
+                                                    </div>
+                                                    <div class="col-lg-5"
+                                                        style="display: flex; justify-content: center; align-items: center;">
+                                                        <button mat-button color="buy-button" (click)="btnBuyScrolls()">
+                                                            <mat-icon>paid</mat-icon> Buy Scrolls <mat-icon>paid
+                                                            </mat-icon>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </mat-card>
+                                        </mat-card>
+                                    </div>
+                                </div>
                             </mat-card>
-                        </div>
-                    </mat-tab>
-
-                    <mat-tab label="7 days">
-                        <div class="col-md-12">
-                            <mat-card>
-                                <mat-card-title class="emphasis-text">Summoned Hereos</mat-card-title>
-                                <mat-card-content>
-                                    <div class="row">
-
-                                        <div class="col-md-3">
-                                            <mat-card>
-                                                <mat-card-header class="hero-card-header">
-                                                    <div class="row hero-card-header-row">
-                                                        <div class="col-md-8">
-                                                            <mat-card-title class="emphasis-text rarity-normal">
-                                                                Normal
-                                                            </mat-card-title>
-                                                        </div>
-                                                    </div>
-                                                </mat-card-header>
-                                                <p class="div-center-itens emphasis-text" style="padding: 10px;">5930
-                                                </p>
-                                                <mat-card-content class="hero-card-content">
-                                                    <mat-icon style="color: blueviolet;">star</mat-icon>
-                                                    <mat-icon style="color: gray">star</mat-icon>
-                                                    <mat-icon style="color: gray;">star</mat-icon>
-                                                    <mat-icon style="color: gray;">star</mat-icon>
-                                                </mat-card-content>
-                                            </mat-card>
-                                        </div>
-
-                                        <div class="col-md-3">
-                                            <mat-card>
-                                                <mat-card-header class="hero-card-header">
-                                                    <div class="row hero-card-header-row">
-                                                        <div class="col-md-8">
-                                                            <mat-card-title class="emphasis-text rarity-rare">
-                                                                Rare
-                                                            </mat-card-title>
-                                                        </div>
-                                                    </div>
-                                                </mat-card-header>
-                                                <p class="div-center-itens emphasis-text" style="padding: 10px;">3717
-                                                </p>
-                                                <mat-card-content class="hero-card-content">
-                                                    <mat-icon style="color: blueviolet;">star</mat-icon>
-                                                    <mat-icon style="color: blueviolet">star</mat-icon>
-                                                    <mat-icon style="color: gray;">star</mat-icon>
-                                                    <mat-icon style="color: gray;">star</mat-icon>
-                                                </mat-card-content>
-                                            </mat-card>
-                                        </div>
-
-                                        <div class="col-md-3">
-                                            <!--repetir para todas raridades-->
-                                            <mat-card>
-                                                <mat-card-header class="hero-card-header">
-                                                    <div class="row hero-card-header-row">
-                                                        <div class="col-md-8">
-                                                            <mat-card-title class="emphasis-text rarity-epic">
-                                                                Epic
-                                                            </mat-card-title>
-                                                        </div>
-                                                    </div>
-                                                </mat-card-header>
-                                                <p class="div-center-itens emphasis-text" style="padding: 10px;">2870
-                                                </p>
-                                                <mat-card-content class="hero-card-content">
-                                                    <mat-icon style="color: blueviolet;">star</mat-icon>
-                                                    <mat-icon style="color: blueviolet">star</mat-icon>
-                                                    <mat-icon style="color: blueviolet;">star</mat-icon>
-                                                    <mat-icon style="color: gray;">star</mat-icon>
-                                                </mat-card-content>
-                                            </mat-card>
-                                        </div>
-
-                                        <div class="col-md-3">
-                                            <!--repetir para todas raridades-->
-                                            <mat-card>
-                                                <mat-card-header class="hero-card-header">
-                                                    <div class="row hero-card-header-row">
-                                                        <div class="col-md-8">
-                                                            <mat-card-title class="emphasis-text rarity-legendary">
-                                                                Legendary
-                                                            </mat-card-title>
-                                                        </div>
-                                                    </div>
-                                                </mat-card-header>
-                                                <p class="div-center-itens emphasis-text" style="padding: 10px;">290</p>
-                                                <mat-card-content class="hero-card-content">
-                                                    <mat-icon style="color: blueviolet;">star</mat-icon>
-                                                    <mat-icon style="color: blueviolet">star</mat-icon>
-                                                    <mat-icon style="color: blueviolet;">star</mat-icon>
-                                                    <mat-icon style="color: blueviolet;">star</mat-icon>
-                                                </mat-card-content>
-                                            </mat-card>
-                                        </div>
-                                    </div>
-                                </mat-card-content>
-                            </mat-card>
-                        </div>
-                    </mat-tab>
-
-                    <mat-tab label="30 days">
-                        <div class="col-md-12">
-                            <mat-card>
-                                <mat-card-title class="emphasis-text">Summoned Hereos</mat-card-title>
-                                <mat-card-content>
-                                    <div class="row">
-
-                                        <div class="col-md-3">
-                                            <mat-card>
-                                                <mat-card-header class="hero-card-header">
-                                                    <div class="row hero-card-header-row">
-                                                        <div class="col-md-8">
-                                                            <mat-card-title class="emphasis-text rarity-normal">
-                                                                Normal
-                                                            </mat-card-title>
-                                                        </div>
-                                                    </div>
-                                                </mat-card-header>
-                                                <p class="div-center-itens emphasis-text" style="padding: 10px;">93530
-                                                </p>
-                                                <mat-card-content class="hero-card-content">
-                                                    <mat-icon style="color: blueviolet;">star</mat-icon>
-                                                    <mat-icon style="color: gray">star</mat-icon>
-                                                    <mat-icon style="color: gray;">star</mat-icon>
-                                                    <mat-icon style="color: gray;">star</mat-icon>
-                                                </mat-card-content>
-                                            </mat-card>
-                                        </div>
-
-                                        <div class="col-md-3">
-                                            <mat-card>
-                                                <mat-card-header class="hero-card-header">
-                                                    <div class="row hero-card-header-row">
-                                                        <div class="col-md-8">
-                                                            <mat-card-title class="emphasis-text rarity-rare">
-                                                                Rare
-                                                            </mat-card-title>
-                                                        </div>
-                                                    </div>
-                                                </mat-card-header>
-                                                <p class="div-center-itens emphasis-text" style="padding: 10px;">53417
-                                                </p>
-                                                <mat-card-content class="hero-card-content">
-                                                    <mat-icon style="color: blueviolet;">star</mat-icon>
-                                                    <mat-icon style="color: blueviolet">star</mat-icon>
-                                                    <mat-icon style="color: gray;">star</mat-icon>
-                                                    <mat-icon style="color: gray;">star</mat-icon>
-                                                </mat-card-content>
-                                            </mat-card>
-                                        </div>
-
-                                        <div class="col-md-3">
-                                            <!--repetir para todas raridades-->
-                                            <mat-card>
-                                                <mat-card-header class="hero-card-header">
-                                                    <div class="row hero-card-header-row">
-                                                        <div class="col-md-8">
-                                                            <mat-card-title class="emphasis-text rarity-epic">
-                                                                Epic
-                                                            </mat-card-title>
-                                                        </div>
-                                                    </div>
-                                                </mat-card-header>
-                                                <p class="div-center-itens emphasis-text" style="padding: 10px;">38870
-                                                </p>
-                                                <mat-card-content class="hero-card-content">
-                                                    <mat-icon style="color: blueviolet;">star</mat-icon>
-                                                    <mat-icon style="color: blueviolet">star</mat-icon>
-                                                    <mat-icon style="color: blueviolet;">star</mat-icon>
-                                                    <mat-icon style="color: gray;">star</mat-icon>
-                                                </mat-card-content>
-                                            </mat-card>
-                                        </div>
-
-                                        <div class="col-md-3">
-                                            <!--repetir para todas raridades-->
-                                            <mat-card>
-                                                <mat-card-header class="hero-card-header">
-                                                    <div class="row hero-card-header-row">
-                                                        <div class="col-md-8">
-                                                            <mat-card-title class="emphasis-text rarity-legendary">
-                                                                Legendary
-                                                            </mat-card-title>
-                                                        </div>
-                                                    </div>
-                                                </mat-card-header>
-                                                <p class="div-center-itens emphasis-text" style="padding: 10px;">1120
-                                                </p>
-                                                <mat-card-content class="hero-card-content">
-                                                    <mat-icon style="color: blueviolet;">star</mat-icon>
-                                                    <mat-icon style="color: blueviolet">star</mat-icon>
-                                                    <mat-icon style="color: blueviolet;">star</mat-icon>
-                                                    <mat-icon style="color: blueviolet;">star</mat-icon>
-                                                </mat-card-content>
-                                            </mat-card>
-                                        </div>
-                                    </div>
-                                </mat-card-content>
-                            </mat-card>
-                        </div>
-                    </mat-tab>
-                </mat-tab-group>
-            </div>
-
-            <div class="row">
-                <div class="col-md-3 div-center-itens">
-                    <img src="./assets/img/summon-portal.png">
-                </div>
-                <div class="col-md-9">
-                    <mat-card style="height: 100%;">
-                        <div class="row" style="margin-bottom: 5%;">
-                            <div class="col-md-12 emphasis-text">
-                                Try your luck and summon a new hero to help you in your battles and conquer fortunes!!!
-                            </div>
-                        </div>
-                        <div class="row" style="height: 100%;">
-                            <div class="col-md-4">
-                                <mat-card class="div-center-itens">
-                                    <div class="row div-center-itens">
-                                        <div class="col-md-1"></div>
-                                        <div class="col-md-10">
-                                            <img src="./assets/img/Unknow_Hero.png">
-                                        </div>
-                                    </div>
-                                    <div class="row" style="margin-top:2%;">
-                                        <div class="col-md-1"></div>
-                                        <div class="col-md-10">
-                                            <button mat-raised-button class="btn btn-success" (click)="btnSummonHero()">
-                                                <mat-icon>paid</mat-icon> Summon a Hero
-                                            </button>
-                                        </div>
-                                    </div>
-                                </mat-card>
-                            </div>
-                            <div class="col-md-4">
-                                <mat-card class="div-center-itens">
-                                    <div class="row div-center-itens">
-                                        <div class="col-md-1"></div>
-                                        <div class="col-md-10">
-                                            <img src="./assets/img/Unknow_Hero.png">
-                                        </div>
-                                    </div>
-                                    <div class="row" style="margin-top:2%;">
-                                        <div class="col-md-1"></div>
-                                        <div class="col-md-10">
-                                            <button mat-raised-button class="btn btn-success" (click)="btnSummonHero()">
-                                                <mat-icon>paid</mat-icon> 10x Summon a Hero
-                                            </button>
-                                        </div>
-                                    </div>
-                                </mat-card>
-                            </div>
-                            <div class="col-md-4">
-                                <mat-card class="div-center-itens">
-                                    <div class="row div-center-itens">
-                                        <div class="col-md-1"></div>
-                                        <div class="col-md-10">
-                                            <img src="./assets/img/Unknow_Hero.png">
-                                        </div>
-                                    </div>
-                                    <div class="row" style="margin-top:2%;">
-                                        <div class="col-md-1"></div>
-                                        <div class="col-md-10">
-                                            <button mat-raised-button class="btn btn-success" (click)="btnSummonHero()">
-                                                <mat-icon>paid</mat-icon> 50x Summon a Hero
-                                            </button>
-                                        </div>
-                                    </div>
-                                </mat-card>
-                            </div>
-                        </div>
-                    </mat-card>
+                        </mat-tab>
+                        <mat-tab label="Buy Assets" [disabled]="true">
+                        </mat-tab>
+                    </mat-tab-group>
                 </div>
             </div>
-            <!-- <div class="row justify-content-center">
-                <div class="col-md-4 div-center-itens">
-                    <div class="row">
-                        <div class="col-md-10 div-center-itens">
-                            <button mat-raised-button class="btn btn-success" (click)="btnSummonHero()">
-                                <mat-icon>paid</mat-icon> Summon a Hero
-                            </button>
-                        </div>
-                    </div>
+
+
+
+
+
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <img [src]="summonPortalImg[summonPortalImgIndex]">
                 </div>
-            </div> -->
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-8 div-center-itens">
+                    <button mat-raised-button class="btn btn-success" (click)="btnSummonHero()">
+                        <mat-icon>paid</mat-icon> Summon a Hero
+                    </button>
+                </div>
+            </div>
         </mat-card>
     </div>
 </div>

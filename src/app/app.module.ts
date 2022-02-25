@@ -21,6 +21,9 @@ import { Store } from './heroesCollection/store/store.component';
 import { SummonHeroModal } from './heroesCollection/store/summon-hero-modal/summon-hero-modal.component';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatTabsModule} from '@angular/material/tabs'
+import { UserHeroesCollection2 } from './heroesCollection/user-heroes-collection2/user-heroes-collection2.component';
+import {MatInputModule} from '@angular/material/input';
+import { PlayButton } from './sharedComponents/play-button/play-button.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,9 @@ import {MatTabsModule} from '@angular/material/tabs'
     UserHeroesCollection,
     HeroDetailModal,
     Store,
-    SummonHeroModal
+    SummonHeroModal,
+    UserHeroesCollection2,
+    PlayButton
   ],
   imports: [
     BrowserModule,
@@ -47,7 +52,8 @@ import {MatTabsModule} from '@angular/material/tabs'
     MatSelectModule,
     NgxSpinnerModule,
     MatBadgeModule,
-    MatTabsModule
+    MatTabsModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

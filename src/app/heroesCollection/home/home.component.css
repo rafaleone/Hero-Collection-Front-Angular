@@ -1,9 +1,275 @@
-.conteiner {
-    background-image: url("../../../assets/img/main-background2.jpg");
-    background-size:cover;
-    background-repeat:no-repeat;
-    background-position:center center;
-    height: 100%;
-    width: 100%;
-    margin: 0;
+.card-over {
+  background-color: rgba(204, 196, 196, 0.5);
+  width: 85%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  height: 100%;
+}
+
+.logo-card-over {
+  background-color: rgba(204, 196, 196, 0.5);
+  left: 50%;
+  transform: translate(-50%, 0);
+  margin-top: 15px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.logo {
+  animation: UpDown_Logo 3s;
+  position: absolute;
+  top: 60px;
+  animation-direction: normal;
+}
+
+.left_hero_1 {
+  animation: left_hero_1 1s;
+  position: absolute;
+  left: 400px;
+  bottom: 20%;
+  animation-direction: normal;
+}
+
+.left_hero_2 {
+  animation: left_hero_2 1s;
+  position: absolute;
+  left: 200px;
+  bottom: 20%;
+  animation-direction: normal;
+}
+
+.left_hero_3 {
+  animation: left_hero_3 1s;
+  position: absolute;
+  left: 530px;
+  bottom: 10%;
+  animation-direction: normal;
+}
+
+.left_hero_4 {
+  animation: left_hero_4 1s;
+  position: absolute;
+  left: 300px;
+  bottom: 10%;
+  animation-direction: normal;
+}
+
+.right_hero_1 {
+  animation: right_hero_1 1s;
+  position: absolute;
+  right: 400px;
+  bottom: 20%;
+  animation-direction: reverse;
+}
+
+.right_hero_2 {
+  animation: right_hero_2 1s;
+  position: absolute;
+  right: 200px;
+  bottom: 10%;
+  animation-direction: reverse;
+}
+
+@keyframes UpDown_Logo {
+  0% {
+    top: -500px;
+  }
+
+  100% {
+    top: 60px;
+  }
+}
+
+@keyframes left_hero_1 {
+  0% {
+    left: -500px;
+  }
+
+  100% {
+    left: 400px;
+  }
+}
+
+@keyframes left_hero_2 {
+  0% {
+    left: -500px;
+  }
+
+  100% {
+    left: 200px;
+  }
+}
+
+@keyframes left_hero_3 {
+  0% {
+    left: -500px;
+  }
+
+  100% {
+    left: 530px;
+  }
+}
+
+@keyframes left_hero_4 {
+  0% {
+    left: -500px;
+  }
+
+  100% {
+    left: 300px;
+  }
+}
+
+@keyframes right_hero_1 {
+  0% {
+    right: 400px;
+  }
+
+  100% {
+    right: -500px;
+  }
+}
+
+
+@keyframes right_hero_2 {
+  0% {
+    right: 200px;
+  }
+
+  100% {
+    right: -500px;
+  }
+}
+
+@media (max-width: 1280px) {
+
+
+  .hero_img_size {
+    width: 120%;
+    height: auto;
+  }
+
+  .left_hero_1 {
+    animation: left_hero_1 1s;
+    position: absolute;
+    left: 300px;
+    bottom: 20%;
+    animation-direction: normal;
+  }
+
+  .left_hero_2 {
+    animation: left_hero_2 1s;
+    position: absolute;
+    left: 200px;
+    bottom: 20%;
+    animation-direction: normal;
+  }
+
+  .left_hero_3 {
+    animation: left_hero_3 1s;
+    position: absolute;
+    left: 370px;
+    bottom: 12%;
+    animation-direction: normal;
+  }
+
+  .left_hero_4 {
+    animation: left_hero_4 1s;
+    position: absolute;
+    left: 250px;
+    bottom: 12%;
+    animation-direction: normal;
+  }
+
+
+  /* direita */
+  .right_hero_1 {
+    animation: right_hero_1 1s;
+    position: absolute;
+    right: 300px;
+    bottom: 20%;
+    animation-direction: reverse;
+  }
+
+  .right_hero_2 {
+    animation: right_hero_2 1s;
+    position: absolute;
+    right: 200px;
+    bottom: 12%;
+    animation-direction: reverse;
+  }
+
+  @keyframes UpDown_Logo {
+    0% {
+      top: -500px;
+    }
+
+    100% {
+      top: 60px;
+    }
+  }
+
+  @keyframes left_hero_1 {
+    0% {
+      left: -500px;
+    }
+
+    100% {
+      left: 300px;
+    }
+  }
+
+  @keyframes left_hero_2 {
+    0% {
+      left: -500px;
+    }
+
+    100% {
+      left: 200px;
+    }
+  }
+
+  @keyframes left_hero_3 {
+    0% {
+      left: -500px;
+    }
+
+    100% {
+      left: 370px;
+    }
+  }
+
+  @keyframes left_hero_4 {
+    0% {
+      left: -500px;
+    }
+
+    100% {
+      left: 250px;
+    }
+  }
+
+  @keyframes right_hero_1 {
+    0% {
+      right: 300px;
+    }
+
+    100% {
+      right: -500px;
+    }
+  }
+
+
+  @keyframes right_hero_2 {
+    0% {
+      right: 200px;
+    }
+
+    100% {
+      right: -500px;
+    }
+  }
 }

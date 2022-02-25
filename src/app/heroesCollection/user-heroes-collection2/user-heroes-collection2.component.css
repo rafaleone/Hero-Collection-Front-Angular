@@ -1,0 +1,146 @@
+.card-over {
+    background-color: rgba(204, 196, 196, 0.5);
+    width: 85%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 100%;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.hide-content{
+    visibility: hidden;
+}
+/* .emphasis-text {
+
+    font-size: 1.5vw;
+    letter-spacing: 0px;
+    word-spacing: 2px;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: small-caps;
+    text-transform: none;
+    align-items: center;
+    text-align: center;
+} */
+
+.hero-type-text {
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 40px;
+    font-variant: small-caps;
+    background-color: #4C4B63;
+    color: #5386E4;
+    height: 30px;
+}
+
+.hero-rarity-text {
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 32px;
+    font-variant: small-caps;
+    height: 30px;
+}
+
+.rarity-common {
+    color: #696664;
+}
+
+.rarity-uncommon {
+    color: #2d8743;
+}
+
+.rarity-rare {
+    color: #36a3ff;
+}
+
+.rarity-epic {
+    color: #b02322
+}
+
+.rarity-legendary {
+    color: #f2ad1a;
+}
+
+.rarity-mythic {
+    color: #7f24e0;
+}
+
+.hero-card-header {
+    background: black;
+    padding-right: 0;
+    text-align: center;
+}
+
+.hero-card-content {
+    background: black;
+    margin: 0;
+    text-align: center;
+}
+
+.hero-card-header-row {
+    width: 100%;
+}
+
+.hero-card-actions {
+    background-color: grey;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+.hero-action-button {
+    width: 100%;
+    padding: 0;
+    line-height:0;
+}
+
+.mat-badge-content {
+    /* background: rgb(55, 148, 55) */
+    background: #4C4B63;
+    top: unset;
+    right: 50px;
+}
+
+.hero-type-main-row {
+    margin-bottom: 15px;
+}
+
+.empty-star-color-icon {
+    color: rgb(192, 192, 192);
+}
+
+.middle-filled-star-color-icon {
+    /* color: blueviolet; */
+    background: -moz-linear-gradient(top, rgb(192, 192, 192) 0%, blueviolet 140%);
+    background: -webkit-linear-gradient(top,  rgb(192, 192, 192) 0%, blueviolet 140%);
+    background: linear-gradient(to bottom,  rgb(192, 192, 192) 0%, blueviolet 140%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.full-filled-star-color-icon {
+    /* color: blueviolet; */
+    background: -moz-linear-gradient(top,  rgb(192, 192, 192) 0%, blueviolet 40%);
+    background: -webkit-linear-gradient(top,  rgb(192, 192, 192) 0%, blueviolet 40%);
+    background: linear-gradient(to bottom,  rgb(192, 192, 192) 0%, blueviolet 40%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.mat-card-title {
+    margin-bottom: 0px;
+}
+
+.mat-buy-button {
+    background-color: #4C4B63;
+    color: #C3C3C3;
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 20px;
+}

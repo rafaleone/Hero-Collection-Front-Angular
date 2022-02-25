@@ -1,8 +1,8 @@
-import { ɵallowPreviousPlayerStylesMerge } from '@angular/animations/browser';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { HeroDetails } from 'src/app/_dto/response/Hero/hero-details';
 import { HeroService } from 'src/app/_services/hero-service';
+import * as myGlobals from 'src/app/globals';
 
 @Component({
   selector: 'hero-detail-modal',
@@ -12,9 +12,6 @@ import { HeroService } from 'src/app/_services/hero-service';
 
 export class HeroDetailModal implements OnInit {
 
-
-  public heroImgMap: string = "";
-  public heroTitle: string = "";
   public rarityClass: string = "";
   public heroes: HeroDetails[] = []
   public selectedOrder = 'idAsc';
@@ -29,27 +26,37 @@ export class HeroDetailModal implements OnInit {
   ngOnInit(): void {
     (this.data.heroes as HeroDetails[]).forEach(hero => this.heroes.push(hero));
 
-    this.heroImgMap = this._heroService.getHeroImage(this.heroes[0].type.id, this.heroes[0].rarity.id);
-    this.heroTitle = this._heroService.getHeroTitle(this.heroes[0].type.id, this.heroes[0].rarity.id);
-
+    
     switch (this.heroes[0].rarity.id) {
       case 1: {
-        this.rarityClass = "rarity-normal";
+        this.rarityClass = "rarity-common";
         break;
       }
       case 2: {
-        this.rarityClass = "rarity-rare";
+        this.rarityClass = "rarity-uncommon";
         break;
       }
       case 3: {
-        this.rarityClass = "rarity-epic";
+        this.rarityClass = "rarity-rare";
         break;
       }
       case 4: {
+        this.rarityClass = "rarity-epic";
+        break;
+      }
+      case 5: {
         this.rarityClass = "rarity-legendary";
         break;
       }
+      case 6: {
+        this.rarityClass = "rarity-mythic";
+        break;
+      }
     }
+  }
+
+  getHeroImage(HeroTypeName: string, HeroRarityName: string): string {
+    return `${myGlobals.heroesImgPath}/${HeroTypeName}_${HeroRarityName}${myGlobals.heroesImgExtension}`;
   }
 
   onNoClick(): void {
@@ -75,9 +82,9 @@ export class HeroDetailModal implements OnInit {
         this.heroes.forEach(hero => {
           hero.totalPwr = hero.attrAttackSpeed + hero.attrDefense + hero.attrDistanceAttack + hero.attrHealthPoints + hero.attrMagicPower + hero.attrMeleAttack;
         });
-        if(optionValue == "pwrAsc"){
+        if (optionValue == "pwrAsc") {
           this.heroes = this.heroes.sort((a, b) => a.totalPwr.toString().localeCompare(b.totalPwr.toString()))
-        } else if(optionValue == "pwrDesc"){
+        } else if (optionValue == "pwrDesc") {
           this.heroes = this.heroes.sort((a, b) => b.totalPwr.toString().localeCompare(a.totalPwr.toString()))
         }
         break;

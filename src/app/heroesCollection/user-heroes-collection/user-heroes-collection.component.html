@@ -1,5 +1,5 @@
 <ngx-spinner type="square-jelly-box"></ngx-spinner>
-<div class="row conteiner">
+<div class="row">
     <div class="col-md-12">
 
         <mat-card class="card-over">
@@ -18,7 +18,8 @@
                                                         <img src="./assets/img/all-knights-badge.png">
                                                     </div>
                                                     <div class="col-md-10">
-                                                        Master Knight: You have knights of all rarities (Bonus Health Points +5%) 
+                                                        Master Knight: You have knights of all rarities (Bonus Health
+                                                        Points +5%)
                                                     </div>
                                                 </div>
                                             </mat-card>
@@ -28,14 +29,19 @@
                                                         <img src="./assets/img/100-heroes-bagde.png">
                                                     </div>
                                                     <div class="col-md-10">
-                                                        Veteran Hero: You have more than 100 Heroes (Bonus Attack Speed +1%) 
+                                                        Veteran Hero: You have more than 100 Heroes (Bonus Attack Speed
+                                                        +1%)
                                                     </div>
                                                 </div>
                                             </mat-card>
                                         </mat-card>
                                     </div>
-                                    <div class="col-md-4"><mat-card style="height: 100%;"></mat-card></div>
-                                    <div class="col-md-4"><mat-card style="height: 100%;"></mat-card></div>
+                                    <div class="col-md-4">
+                                        <mat-card style="height: 100%;"></mat-card>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <mat-card style="height: 100%;"></mat-card>
+                                    </div>
                                 </div>
                             </mat-card>
                         </mat-tab>
@@ -55,31 +61,32 @@
                 <div class="col-md-10">
 
                     <mat-tab-group [selectedIndex]="tabSelectedIndex">
-                        <div class="row hero-type-main-row" *ngFor="let hero of heroTypes">
-                            <mat-tab label="{{hero.displayName}}">
+                        <div class="row hero-type-main-row" *ngFor="let heroType of heroTypes">
+                            <mat-tab label="{{heroType.name}}">
 
                                 <div class="col-md-12">
                                     <mat-card>
                                         <mat-card-content>
                                             <div class="row">
 
-                                                <div *ngFor="let heroRarity of hero.rarity" class="col-md-3">
+                                                <div *ngFor="let heroRarity of heroRarities" class="col-md-2">
                                                     <mat-card>
                                                         <mat-card-header class="hero-card-header">
                                                             <div class="row hero-card-header-row">
                                                                 <div class="col-md-8">
                                                                     <mat-card-title
-                                                                        [ngClass]="'emphasis-text rarity-'+heroRarity.name">
-                                                                        {{heroRarity.displayName}}
+                                                                        [ngClass]="'emphasis-text rarity-'+heroRarity.name.toLowerCase()">
+                                                                        {{heroRarity.name}}
                                                                     </mat-card-title>
                                                                 </div>
                                                                 <div class="col-md-4">
-                                                                    <span matBadge="{{heroRarity.count || ''}}"
+                                                                    <span
+                                                                        [matBadge]=getHeroesAmount(heroType.id,heroRarity.id)
                                                                         matBadgeOverlap="false"></span>
                                                                 </div>
                                                             </div>
                                                         </mat-card-header>
-                                                        <img [src]="heroesCardImgMap[hero.id][heroRarity.id]">
+                                                        <img [src]="getHeroImage(heroType.name,heroRarity.name)">
                                                         <mat-card-content class="hero-card-content">
                                                             <mat-icon style="color: blueviolet;">star</mat-icon>
                                                             <mat-icon
@@ -91,10 +98,16 @@
                                                             <mat-icon
                                                                 [ngClass]="heroRarity.id > 3 ? 'filled-star-color-icon' : 'empty-star-color-icon'">
                                                                 star</mat-icon>
+                                                            <mat-icon
+                                                                [ngClass]="heroRarity.id > 4 ? 'filled-star-color-icon' : 'empty-star-color-icon'">
+                                                                star</mat-icon>
+                                                            <mat-icon
+                                                                [ngClass]="heroRarity.id > 5 ? 'filled-star-color-icon' : 'empty-star-color-icon'">
+                                                                star</mat-icon>
                                                         </mat-card-content>
                                                         <mat-card-actions class="hero-card-actions">
                                                             <button mat-button class="hero-action-button"
-                                                                (click)="openHeroDetails(hero.id,heroRarity.id)">Details</button>
+                                                                (click)="openHeroDetails(heroType.id,heroRarity.id)" [disabled]="getHeroesAmount(heroType.id,heroRarity.id)<1">Details</button>
                                                         </mat-card-actions>
                                                     </mat-card>
                                                 </div>

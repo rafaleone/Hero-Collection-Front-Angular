@@ -1,0 +1,75 @@
+<ngx-spinner type="square-jelly-box"></ngx-spinner>
+<div class="row" [ngClass]="hideContent?'hide-content':''">
+    <div class="col-lg-12">
+
+        <mat-card class="card-over">
+
+            <div class="row justify-content-center">
+                <div class="col-xxl-9 col-xl-12">
+
+                    <mat-card class="hero-card-conteiner">
+                        <div class="row hero-type-main-row" *ngFor="let heroType of heroTypes">
+
+                            <div class="col-12">
+                                <mat-card>
+                                    <mat-card-title class="hero-type-text">
+                                        {{heroType.name}}
+                                    </mat-card-title>
+                                    <mat-card-content>
+                                        <div class="row">
+
+                                            <div *ngFor="let heroRarity of heroRarities" class="col-lg-2 col-4">
+                                                <mat-card>
+
+
+
+                                                    <mat-card-title
+                                                        [ngClass]="'hero-rarity-text hero-card-header rarity-'+heroRarity.name.toLowerCase()">
+                                                        <span *ngIf="true"
+                                                            [matBadge]=getHeroesAmount(heroType.id,heroRarity.id)
+                                                            matBadgeOverlap="false" style="float: right;"></span>
+                                                        {{heroRarity.name}}
+                                                    </mat-card-title>
+
+
+
+                                                    <img [src]="getHeroImage(heroType.name,heroRarity.name)">
+                                                    <mat-card-content class="hero-card-content">
+                                                        <mat-icon class="full-filled-star-color-icon">star</mat-icon>
+
+                                                        <mat-icon [ngClass]="{
+                                                            'middle-filled-star-color-icon': heroRarity.id == 1,
+                                                            'full-filled-star-color-icon': heroRarity.id > 1}">star
+                                                        </mat-icon>
+                                                        <mat-icon [ngClass]="{
+                                                            'empty-star-color-icon': heroRarity.id < 3,
+                                                            'middle-filled-star-color-icon': heroRarity.id == 3,
+                                                            'full-filled-star-color-icon': heroRarity.id > 3}">star
+                                                        </mat-icon>
+                                                        <mat-icon [ngClass]="{
+                                                                'empty-star-color-icon': heroRarity.id < 5,
+                                                                'middle-filled-star-color-icon': heroRarity.id == 5,
+                                                                'full-filled-star-color-icon': heroRarity.id > 5}">
+                                                            star</mat-icon>
+                                                    </mat-card-content>
+                                                    <mat-card-actions class="hero-card-actions" [hidden]="false">
+                                                        <button mat-button class="hero-action-button"
+                                                            (click)="openHeroDetails(heroType.id,heroRarity.id)"
+                                                            [disabled]="getHeroesAmount(heroType.id,heroRarity.id)<1">
+                                                            <mat-icon>image_search</mat-icon>
+                                                        </button>
+                                                    </mat-card-actions>
+                                                </mat-card>
+                                            </div>
+                                        </div>
+                                    </mat-card-content>
+                                </mat-card>
+                            </div>
+
+                        </div>
+                    </mat-card>
+                </div>
+            </div>
+
+        </mat-card>
+    </div>

@@ -23,19 +23,27 @@ img {
   text-align: center;
 }
 
-.rarity-normal{
-  color: #a8adb5;
+.rarity-common {
+  color: #696664;
 }
 
-.rarity-rare{
-  color: #4681e0;
+.rarity-uncommon {
+  color: #2d8743;
 }
 
-.rarity-epic{
-  color: #e0ab24;
+.rarity-rare {
+  color: #36a3ff;
 }
 
-.rarity-legendary{
+.rarity-epic {
+  color: #b02322
+}
+
+.rarity-legendary {
+  color: #f2ad1a;
+}
+
+.rarity-mythic {
   color: #7f24e0;
 }
 
